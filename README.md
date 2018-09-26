@@ -10,7 +10,7 @@ Utilizaremos um aplicativo web escrito em Node com o framework Express como base
 ## Levels
 Esse repositório é dividido em pequenos módulos que abordam funcionalidades diferentes do Docker. São eles:
 
-0. [Lvl 0 - Install](http://github.com/victorhundo/docker-ceres/tree/master/lvl.0.install)
+0. [Lvl 0 - Configure](http://github.com/victorhundo/docker-ceres/tree/master/lvl.0.configure)
 1. [Lvl 1 - Containers](http://github.com/victorhundo/docker-ceres/tree/master/lvl.1.containers)
 2. [Lvl 2 - Images](http://github.com/victorhundo/docker-ceres/tree/master/lvl.2.images)
 3. [Lvl 3 - Volumes](http://github.com/victorhundo/docker-ceres/tree/master/lvl.3.volumes)
