@@ -1,5 +1,7 @@
 # Lvl. 0 - Configure
 
+![Banner Docker](../assets/docker-banner-0.jpg)
+
 Antes de começar nossos estudos práticos sobre Docker é necessário configurar o ambiente para que possamos instalar-lo, além do docker, também vamos instalar o ``docker-compose`` que veremos no Lvl.5.
 
 Para essa oficina vamos utilizar uma máquina com Debian. Caso seu computador não seja esse sistema, acessem a [documentação oficial do docker](https://docs.docker.com/install/overview/) para saber os procedimentos de instalação em outras plataformas.
