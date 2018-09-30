@@ -11,6 +11,7 @@ Agora que estamos com ambiente configurado para executar Docker e o docker-compo
 2. [Hello World](#hello-world)
 3. [Criando Containers](#criando-containers)
 4. [Alguns Comandos Úteis](#comandos-úteis)
+5. [Primeiro Build com Containers](#Primeiro-Build)
 
 ## Introdução
 
@@ -85,3 +86,74 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 5. **STATUS** - Estado do container, pode ser: Up, ou Exited
 6. **PORTS** - Portas de rede que o container está utilizando/expondo.
 7. **NAMES** - O nome do container, para ser mais amigável de identificar no lugar do ID, na criação do container é possivel personalizar o nome com o para metro --name, por exemplo ``docker run --name My-Node -it node bash``
+
+### Adicionando ou retirando arquivos do container
+
+Ainda utilizando o exemplo do container node que criamos **kind_northcutt** (node gerado automaticamente, provavelmente será outro nome no seu computador), vamos adicionar os arquivos que esta na pasta ``/lvl1.containers/app`` nesse repositório.
+
+A pasta ``app`` tem uma aplicação hello world em node, para tranferir os arquivos para dentro do container faça:
+
+```
+docker cp app/ NOME_DO_CONTAINER:/opt/
+```
+
+Como já dito, o `NOME_DO_CONTAINER` mudará de máquina pra máquina, verifique executando o comando ``docker ps`` já visto.
+
+### Entrando no container
+
+Até agora apenas entramos no container na hora de sua criação, para que possamos voltar ao ambiente do container devemos executar o comando:
+
+```
+docker exec -it NOME_DO_CONTAINER bash
+```
+
+A opção **exec** é voltado pra executar comandos dentro do container, porém, utilizamos da mesma estratégia quando criamos o container: passamos o parametro de terminal interativo e chamamos o shell.
+
+Uma vez de volta ao container, acesse a pasta ``/opt/app`` em que copiamos os arquivos de `app`, os arquivos devem ser listados de forma parecida como abaixo:
+
+```
+root@668698b20989:~# cd /opt/app
+root@668698b20989:/opt/app# ls
+index.html  index.js  style.css
+root@668698b20989:/opt/app#
+```
+
+## Primeiro Build
+
+Agora que estamos com os arquivos node dentro do nosso container, podemos executar o primeiro build dentro do container, para isso execute:
+
+```
+npm install
+```
+
+e para subir nosso servidor web:
+
+```
+npm start
+```
+
+Se tudo correu bem você terá a seguinte saida:
+
+```
+root@668698b20989:/opt/app# npm start
+
+> node-hello-world@0.0.1 start /opt/app
+> node server.js
+
+App listening on port 3000
+Press Ctrl+C to quit.
+```
+
+Agora pressione novamente ``Ctrl-p + q`` para sair do container **salvando o estado atual** e em seguida pare o container que criamos com o comando:
+
+```
+docker stop NOME_DO_CONTAINER
+```
+
+e em seguida o remova:
+
+```
+docker rm NOME_DO_CONTAINER
+```
+
+Nesse módulo aprendemos o que é um container, executamos comandos básicos do docker e fizemos o build e deploy de uma aplicação web simples, porém, tudo de forma manual. No próximo módulo vamos aprender como automatizar o processo de build e deploy da aplicação. Criaremos nossa própria imagem!
