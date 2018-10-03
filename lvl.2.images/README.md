@@ -57,11 +57,11 @@ Logo em seguinda em o ``WORKDIR`` que nos vai dizer em qual pasta estará nosso 
 WORKDIR /opt
 ```
 ### RUN
-Agora executaremos comandos de instalação no container, podemos executar qualquer comando usando ``RUN``. O primeiro executa a instalação do mysql-client e em seguida remove o cache gerado pelo apt, porque **o container deve ser efêmero e o mais leve possível**, o segundo instala o pacote ``nodemon`` do npm.
+Agora executaremos comandos de instalação no container, podemos executar qualquer comando usando ``RUN``. O primeiro executa a instalação do nmap e em seguida remove o cache gerado pelo apt, porque **o container deve ser efêmero e o mais leve possível**, o segundo instala o pacote ``nodemon`` do npm.
 
 ```
 RUN apt-get update && apt-get install -y \
-    mysql-client \
+    nmap \
 && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g nodemon
