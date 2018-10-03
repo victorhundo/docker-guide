@@ -5,8 +5,9 @@
 **Esse módulo é divido em:**
 
 1. [Intrdução](#introdução)
-2. [Docker Hub](#docker-Hub)
+2. [Docker Hub](#docker-hub)
 3. [Dockerfile](#dockerfile)
+4. [Criando a  Primeira Imagem](#primeira-imagem)
 
 
 ## Introdução
@@ -105,3 +106,15 @@ my_node             1                   828e3f079092        27 seconds ago      
 node                latest              8672b25e842c        11 days ago         674MB
 hello-world         latest              4ab4c602aa5e        3 weeks ago         1.84kB
 ```
+Agora que temos a imagem da nossa aplicação web podemos criar um container a partir dela, pra isso executamos:
+
+```
+docker run -d --name my_app my_node:1
+```
+Dessa vez executamos utilizando o parametro "detached" -d, esse parametro é o oposto quando utilizamos -it, ele criará o container em "background", para visualizar as informações de criação do container execute:
+
+```
+docker logs -f my_app
+```
+
+Nesse módulo aprendemos os conceitos por trás da imagem do docker e criamos uma para a nossa aplicação web exemplo utilizando **Dockerfile**, porém ainda não acessamos nossa aplicação, no próximo módulo estudaremos a parte de rede dos containers e como fazer para acessar nossa aplicação web!
