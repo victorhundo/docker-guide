@@ -7,7 +7,7 @@
 
 1. [Introdução](#intrdução)
 2. [Tipos de volumes](#tipos-de-volumes)
-3. [Deixando BD persistente](#dexiando-bd-persistente)
+3. [Deixando BD persistente](#deixando-bd-persistente
 4. [Criando container para desenvolvimento](#criando-container-para-desenvolvimento)
 
 
