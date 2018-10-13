@@ -7,6 +7,8 @@
 
 1. [Introdução](#intrdução)
 2. [Tipos de volumes](#tipos-de-volumes)
+3. [Deixando BD persistente](#dexiando-bd-persistente)
+4. [Criando container para desenvolvimento](#criando-container-para-desenvolvimento)
 
 
 ## Introdução
@@ -33,7 +35,7 @@ Normamelnte volumes com bind são utilizados quando é preciso **fazer modifica�
 
 Já os volume sem bind geralmente são utilizados quando queremos **apenas salvar as informações** e queremos apenas ler esses dados, **banco de ddados** é um exemplo que pode utilizar esse tipo de volme.
 
-## Dexiando BD persistente
+## Deixando BD persistente
 
 Para que possamos deixar os dados do banco de dados persistene primeiro precisamos saber como que o seu sgbd armazena os dados. No nosso caso que estamos utilizando mysql, ele armazena os dados no caminho ``/var/lib/mysql``, então o que será necessário é apenas informar ao Docker que essa pasta será armazenada em um volume. No nosso exemplo será:
 
