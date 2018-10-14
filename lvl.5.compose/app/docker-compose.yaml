@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    image: myapp
+    build: .
+    container_name: myWeb-app
+    links:
+      - bd:my_bd
+    volumes:
+      - ./:/opt/
+    ports:
+      - "1915:3000"
+
+  bd:
+    image: mysql:latest
+    container_name: bd
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=senha
+    volumes:
+      - datavolume:/var/lib/mysql
+
+volumes:
+  datavolume:
