@@ -1,5 +1,7 @@
 # Docker Compose
 
+![Banner Docker](../assets/docker-banner-5.jpg)
+
 Como vocês puderam reparar, os comandos do docker só fazem crescer e fica ainda mais complexo quando precisamos utilizar mais de um container para fazer nosso serviço funcionar (é natural que mais de 3 containers trabalhem em conjunto para uma única aplicação).
 
 O Docker Compose veio para **simplificar e facilitar** a manutenção de múltiplos containers para uma unica aplicação.
@@ -53,4 +55,4 @@ Para remover os containers basta executar
 
 ```
 docker-compose down
-``` 
+```
