@@ -4,8 +4,13 @@
 
 Repositório da oficina de docker para a IV semana de informática do Centro de Ensino Superior do Seridó - CERES/UFRN.
 
-
 Utilizaremos um aplicativo web escrito em Node com o framework Express como base para fazer a conteinerização e mostrar as vatanges da estratégia de utilizar Docker no desenvolvimento, porém, **não será necessário conhecimentos em Node para fazer essa oficina**
+
+## Recomendações
+
+1. Faça o clone desse repositório com o comando ``git clone https://github.com/victorhundo/docker-guide.git`` e verifique os arquivos de configuração paralelamente com as instruções do material da oficina.
+
+2. Para fazer essa oficina recomendamos que todos os comandos sejam **executados manualmente** no terminal do seu computador, é importante que no fim dessa oficina você saiba o que cada paramêtro faz.
 
 ## Levels
 Esse repositório é dividido em pequenos módulos que abordam funcionalidades diferentes do Docker. São eles:
