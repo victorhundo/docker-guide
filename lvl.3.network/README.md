@@ -38,7 +38,10 @@ docker run -d --name my_app -p 1915:3000 my_node:1
 
 Repare que agora nós adicionamos mais um parametro na criação do container, o parametro ``-p`` significa que ao escutar na máquina real na porta ``1915`` quem responderá é o serviço que está rodando na porta ``3000`` dentro do container. Utilizamos 1915 mas poderiamos utilizar qualquer outra porta.
 
-** Modifique o comando acima, e no lugar de 1915 adicione a data do seu aniversáro e em seguida acesse em um navegador web o endereço http://localhost:DATA_ANIVERSARIO**
+
+Modifique o comando acima, e no lugar de 1915 adicione a data do seu aniversáro
+
+E em seguida acesse em um navegador web o endereço http://localhost:DATA_ANIVERSARIO
 
 Repare que podemos subir inúmeros containers do mesmo serviços em portas diferentes, assim, além de isolar memória, processamento, biblioteca/binários, o Docker também isola a rede para o funcionamento do container.
 

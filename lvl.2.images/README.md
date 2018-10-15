@@ -12,7 +12,7 @@
 
 ## Introdução
 
-No módulo anterior nós copiamos os arquivos que estava na pasta ``/lvl.1.containers/app`` no repositório para que fosse possivel fazer o build e o deploy da nossa aplicação web exemplo, essa prática não é recomendada porque para uma aplicação grande contém vários arquivos além de outros programas/bibliotecas que precisam está instaladas no **ambiente da aplicação.** A melhor forma de customizar o container com as configurações necessárias para que sua aplicação funcione da melhor forma possíve é através de **imagens.**
+No módulo anterior nós copiamos os arquivos que estava na pasta ``/lvl.1.containers/app`` no repositório para que fosse possivel fazer o build e o deploy da nossa aplicação web exemplo, essa prática não é recomendada porque para uma aplicação grande contém vários arquivos além de outros programas/bibliotecas que precisam está instaladas no **ambiente da aplicação.** A melhor forma de customizar o container com as configurações necessárias para que sua aplicação funcione da melhor forma possivel é através de **imagens.**
 
 ## Docker Hub
 Uma imagem docker é um container pré-configurado em que será utilizado como referencia **para criar containers**. No nosso exemplo, usamos a imagem **oficial** do Node, assim como containers, podemos visualizar as imagens que estão instaladas na nossa máquina digitando o comando:
@@ -37,7 +37,7 @@ Na data em que esse documento foi escrito esses foram as principais imagens ofic
 
 ## Dockerfile
 
-Mesmo que no Docker Hub exista diversas soluções já desenvolvidas, você precise de uma imagem específica da sua aplicação, uma imagem em que você e outras pessoas possam baixar e utilizar sua aplicação. Para isso é necessário criar um **Dockerfile**.
+Mesmo que no Docker Hub exista diversas soluções já desenvolvidas, você pode precisar de uma imagem específica da sua aplicação, uma imagem em que você e outras pessoas possam baixar e utilizar sua aplicação. Para isso é necessário criar um **Dockerfile**.
 
 Dentro da pasta ``/lvl.2.images/app/`` existe um arquivo chamadao ``Dockerfile``, nele terá as instruções para criar a imagem da nossa aplicação web exemplo.
 
@@ -51,13 +51,13 @@ FROM node:latest
 LABEL maintainer "Victor Hugo <victorhundo@gmail.com>"
 ```
 ### WORKDIR
-Logo em seguinda em o ``WORKDIR`` que nos vai dizer em qual pasta estará nosso diretório de trabalho, ao acessar o container essa será a pasta padrão. Utilizar workdir é importante para não se preocupar em caminhos absolutos na hora de rodar scripts.
+Logo em seguinda em ``WORKDIR`` que nos vai dizer em qual pasta estará nosso diretório de trabalho, ao acessar o container essa será a pasta padrão. Utilizar workdir é importante para não se preocupar em caminhos absolutos na hora de rodar scripts.
 
 ```
 WORKDIR /opt
 ```
 ### RUN
-Agora executaremos comandos de instalação no container, podemos executar qualquer comando usando ``RUN``. O primeiro executa a instalação do nmap e em seguida remove o cache gerado pelo apt, porque **o container deve ser efêmero e o mais leve possível**, o segundo instala o pacote ``nodemon`` do npm.
+Agora executaremos comandos de instalação no container, podemos executar qualquer comando usando ``RUN``. O primeiro executa a instalação do nmap e em seguida remove o cache gerado pelo apt, porque **o container deve ser efêmero e o mais leve possível**, o seguida instala o pacote ``nodemon`` do npm.
 
 ```
 RUN apt-get update && apt-get install -y \
@@ -92,7 +92,7 @@ Para aprender mais sobre Dockerfiles e aprender na prática, recomendamos o [rep
 
 ## Primeira imagem
 
-Agora que aprendemos os conceitos e os caminhos para criar um Dockerfile, chehou a hora de montar nossa primeira imagem! Para isso entrem na pasta ``app`` desse módulo e executem:
+Agora que aprendemos os conceitos e os caminhos para criar um Dockerfile, chegou a hora de montar nossa primeira imagem! Para isso entrem na pasta ``app`` desse módulo e executem:
 
 ```
  docker build . -t my_node:1

@@ -66,7 +66,7 @@ Para sair do container  **sem matar o processo principal** execute ``Ctrl-p + q`
 Ao executar o útlimo comando que citamos acima, você terá o shell do seu computador de volta. Como você manteve o processo principal do container ainda rodando, significa que o container também está rodando!
 
 ### Listando Containers
-para verificar os container que estão rodando na sua máquina execute o comando:
+para verificar os containers que estão rodando na sua máquina execute o comando:
 
 ```
 docker ps
