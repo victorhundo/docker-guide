@@ -57,7 +57,7 @@ local               my_data
 Assim como vimos que a melhor maneira de criar um volume para desenvolvimento é utilizando bind, vamos criar o container da nossa aplicação novamente da seguinte forma:
 
 ```
-docker run -d --name my_app -p 1915:3000 -v /docker-guide/lvl.4.volumes/app:/opt/ --link bd:my_bd my_node:1
+docker run -d --name my_app -p 1915:3000 -v "$PWD"/app:/opt/ --link bd:my_bd my_node:1
 ```
 
 Acessem http://localhost:1915 para verificar que a aplicação está acessivel.
