@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: myapp
+    image: my_node:1
     build: .
     container_name: myWeb-app
     links:
